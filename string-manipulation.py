@@ -24,12 +24,21 @@ def camel2Pascal(camelText):
     pascalText = camelText[0].upper()+camelText[1:]
     return pascalText
 
-def testcamel2Pascal(test_number, inputText):
-    print(f"{test_number}. Camel case = {inputText}")
-    print(f"{test_number}. Pascal case = {camel2Pascal(inputText)}")
+def testcamel2Pascal(test_number, inputText, expectedoutput):
+    print(f"{test_number}. Input = {inputText}")
+    output = camel2Pascal(inputText)
+    print(f"{test_number}. Actual output = {output}")
+    print(f"{test_number}. Expected output = {expectedoutput}")
+    if output==expectedoutput:
+        print("Outout correct")
+        return True
+    else:
+        print("Output incorrect")
+        return False
 
-testcamel2Pascal(1, "OneTwoThree")
-testcamel2Pascal(2, "1TwoThree")
+
+testcamel2Pascal(1, "OneTwoThree","OneTwoThree")
+testcamel2Pascal(2, "1TwoThree","OneTwoThree")
 
 
 
