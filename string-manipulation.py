@@ -24,10 +24,14 @@ def camel2Pascal(camelText):
     pascalText = camelText[0].upper()+camelText[1:]
     return pascalText
 
-name_camel = '1TwoThree'
-name_pascal = camel2Pascal(name_camel)
-print("Camel case = "+name_camel)
-print("Pascal case = "+name_pascal)
+def testcamel2Pascal(test_number, inputText):
+    print(f"{test_number}. Camel case = {inputText}")
+    print(f"{test_number}. Pascal case = {camel2Pascal(inputText)}")
+
+testcamel2Pascal(1, "OneTwoThree")
+testcamel2Pascal(2, "1TwoThree")
+
+
 
 
 # IBANString = "IE12345678901234567890"
