@@ -26,16 +26,20 @@ randomnumber =  (random.randint(1,101))
 chance = 0
 status="play"
 
-while (status=="play"):
-    guess = input("Make a guess: ")
-    if(randomnumber==guess):
-        print("You win! The number was "+randomnumber)
-        status="quit"
-    else:
-        chance+=1
-        if (int(randomnumber)<int(guess)):
-                print("Random number is lower than"+guess)
+while (status!="quit"):
+        guess = input("Make a guess or type Q to quit: ")
+        if (guess=="Q"):
+                print(f"Game over! The number was {randomnumber}  number of guesses is {chance}")
+                status="quit"
+                break
+        if(randomnumber==int(guess)):
+                
+                print(f"You win! The number was {randomnumber}  number of guesses is {chance}")
+                status="quit"
+                break
         else:
-                print("Random number is higher than"+guess)
-
-    
+                chance+=1
+                if (int(randomnumber)<int(guess)):
+                        print("Random number is lower than "+guess)
+                else:
+                        print("Random number is higher than "+guess)
