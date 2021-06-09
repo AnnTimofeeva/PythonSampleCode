@@ -24,6 +24,24 @@ def camel2Pascal(camelText):
     pascalText = camelText[0].upper()+camelText[1:]
     return pascalText
 
+def Pascal2camel(pascalText):
+
+    camelText = pascalText[0].lower()+pascalText[1:]
+    return camelText
+
+def testPascal2camel(test_number, inputText, expectedoutput):
+    print(f"{test_number}. Input = {inputText}")
+    output = Pascal2camel(inputText)
+    print(f"{test_number}. Actual output = {output}")
+    print(f"{test_number}. Expected output = {expectedoutput}")
+    if output==expectedoutput:
+        print("Outout correct")
+        return True
+    else:
+        print("Output incorrect")
+        return False
+
+
 def testcamel2Pascal(test_number, inputText, expectedoutput):
     print(f"{test_number}. Input = {inputText}")
     output = camel2Pascal(inputText)
@@ -36,11 +54,14 @@ def testcamel2Pascal(test_number, inputText, expectedoutput):
         print("Output incorrect")
         return False
 
-
-testcamel2Pascal(1, "OneTwoThree","OneTwoThree")
+print("Testing camel to pascal")
+testcamel2Pascal(1, "oneTwoThree","OneTwoThree")
 testcamel2Pascal(2, "1TwoThree","OneTwoThree")
 
 
+print("Testing pascal to camel")
+testPascal2camel(1, "OneTwoThree","oneTwoThree")
+testPascal2camel(2, "1TwoThree","OneTwoThree")
 
 
 # IBANString = "IE12345678901234567890"
